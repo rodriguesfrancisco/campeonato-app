@@ -1,0 +1,99 @@
+.painel-tela-inicial {
+    margin-top: 40px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.alinhar-centro {
+    text-align: center;
+}
+
+.tabela-classificacao {
+    margin-top: 40px;
+}
+.container-table {
+    margin-top: 40px;
+}
+
+.form-center {
+    margin: 2% 20%;
+}
+
+.padding-top {
+    padding-top: 3%;
+}
+
+.table-classificacoes > tr:nth-child(1) {
+    background-color: rgba(70, 224, 65, 0.8);
+}
+
+.table-classificacoes > tr:nth-child(2) {
+    background-color: rgba(70, 224, 65, 0.8);
+}
+
+.table-classificacoes > tr:nth-child(3) {
+    background-color: rgba(70, 224, 65, 0.8);
+}
+
+.table-classificacoes > tr:nth-child(4) {
+    background-color: rgba(70, 224, 65, 0.8);
+}
+
+.table-classificacoes > tr:nth-child(5) {
+    background-color: rgba(67, 163, 211, 0.8);
+}
+
+.table-classificacoes > tr:nth-child(6) {
+    background-color: rgba(67, 163, 211, 0.8);
+}
+
+.table-classificacoes > tr:nth-child(17) {
+    background-color: rgba(224, 38, 38, 0.8);
+}
+
+.table-classificacoes > tr:nth-child(18) {
+    background-color: rgba(224, 38, 38, 0.8);
+}
+
+.table-classificacoes > tr:nth-child(19) {
+    background-color: rgba(224, 38, 38, 0.8);
+}
+
+.table-classificacoes > tr:nth-child(20) {
+    background-color: rgba(224, 38, 38, 0.8);
+}
+
+.legenda-libertadores {
+    background-color: rgba(70, 224, 65, 0.8);
+    border: black solid 1px;
+    width: 20px;
+    height: 20px;
+}
+
+.legenda-pre-libertadores {
+    background-color: rgba(67, 163, 211, 0.8);
+    border: black solid 1px;
+    width: 20px;
+    height: 20px;
+}
+
+.legenda-sul-americana {
+    border: black solid 1px;
+    width: 20px;
+    height: 20px;
+}
+
+.legenda-rebaixado {
+    background-color: rgba(224, 38, 38, 0.8);
+    border: black solid 1px;
+    width: 20px;
+    height: 20px;
+}
+
+.legendas div {
+    margin: 10px;
+}
+
+.legendas span {
+    padding-top: 7px;
+}

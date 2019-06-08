@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Simular</title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link href="../static/css/site.css" rel="stylesheet" th:href="@{/css/site.css}">
+</head>
+<body>
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" th:href="@{/}">Tabela Brasileirão</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/classificacao}">Classificação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/simular}">Simular Rodada</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/limparDados}">Limpar Dados</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+    <section>
+        <form action="#" th:action="@{/simularJogo}" th:object="${simulacao}" method="post" class="text-center form-center form-group">
+            <h1>Simulação</h1>
+            <div class="row padding-top">
+                <div class="col-md-6">
+                    <label for="time1">Selecione o time 1:</label>
+                    <select id="time1" class="form-control" th:field="*{time1}" required>
+                        <option value="">Selecione um time</option>
+                        <option th:each="time : ${times}" th:text="${time.nome}" th:value="${time.id}"></option>
+                    </select>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="time2">Selecione o time 2:</label>
+                    <select id="time2" class="form-control" th:field="*{time2}" required>
+                        <option value="">Selecione um time</option>
+                        <option th:each="time : ${times}" th:text="${time.nome}" th:value="${time.id}"></option>
+                    </select>
+                </div>
+            </div>
+            <div class="row padding-top">
+                <div class="col-md-6">
+                    <label for="input-time-1">Gols Time 1</label>
+                    <input id="input-time-1" type="number" class="form-control" th:field="*{golsTime1}" required/>
+                </div>
+                <div class="col-md-6">
+                    <label for="input-time-2">Gols Time 2</label>
+                    <input id="input-time-2" type="number" class="form-control" th:field="*{golsTime2}" required/>
+                </div>
+            </div>
+            <div class="padding-top">
+                <button class="btn btn-success" type="submit">Simular!</button>
+            </div>
+        </form>
+    </section>
+</body>

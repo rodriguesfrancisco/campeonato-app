@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Classificação</title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link href="../static/css/site.css" rel="stylesheet" th:href="@{/css/site.css}">
+</head>
+<body>
+
+    <header>
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" th:href="@{/}">Tabela Campeonato</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/classificacao}">Classificação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/simular}">Simular Rodada</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/limparDados}">Limpar Dados</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <section>
+        <div class="container container-table">
+
+            <table class="table table-hover table-bordered alinhar-centro">
+                <thead>
+                    <tr style="background-color: #1bc615; color: #FFFFFF">
+                        <th scope="col">Clube</th>
+                        <th scope="col">Pts</th>
+                        <th scope="col">PJ</th>
+                        <th scope="col">VIT</th>
+                        <th scope="col">E</th>
+                        <th scope="col">D</th>
+                        <th scope="col">GP</th>
+                        <th scope="col">GC</th>
+                        <th scope="col">SG</th>
+                    </tr>
+                </thead>
+                <tbody class="table-classificacoes">
+                    <tr th:each="time: ${times}">
+                        <td th:text="${time.getNome()}" />
+                        <td th:text="${time.getPontos()}" />
+                        <td th:text="${time.getPartidasJogadas()}" />
+                        <td th:text="${time.getVitorias()}" />
+                        <td th:text="${time.getEmpates()}" />
+                        <td th:text="${time.getDerrotas()}" />
+                        <td th:text="${time.getGolsPro()}" />
+                        <td th:text="${time.getGolsContra()}" />
+                        <td th:text="${time.getSaldoDeGols()}" />
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <div class="legendas">
+        <div style="display: flex;">
+            <div class="legenda-libertadores"></div><span>Classificado para Libertadores</span>
+        </div>
+
+        <div style="display: flex;">
+            <div class="legenda-pre-libertadores"></div><span>Classificado para Pré-Libertadores</span>
+        </div>
+
+        <div style="display: flex;">
+            <div class="legenda-sul-americana"></div><span>Classificado para Sul Americana</span>
+        </div>
+
+        <div style="display: flex;">
+            <div class="legenda-rebaixado"></div><span>Rebaixado para 2° divisão</span>
+        </div>
+    </div>
+</body>
+</html>

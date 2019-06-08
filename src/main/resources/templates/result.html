@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Simular</title>
+    <meta http-equiv="Content-Type" content="text/html"; charset="UTF-8"/>
+    <link href="../static/css/bootstrap.css" rel="stylesheet" th:href="@{/css/bootstrap.css}">
+    <link href="../static/css/site.css" rel="stylesheet" th:href="@{/css/site.css}">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" th:href="@{/}">Tabela Brasileirão</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/classificacao}">Classificação</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/simular}">Simular Rodada</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{/limparDados}">Limpar Dados</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="text-center">
+        <h1>Resultado</h1>
+        <div class="display-4 alert alert-success" th:if="${simulacao.golsTime1 > simulacao.golsTime2}" >
+            <p>Vitória do <span th:text="${simulacao.time1.nome}"></span> !</p>
+        </div>
+        <div class="display-4 alert alert-success" th:if="${simulacao.golsTime2 > simulacao.golsTime1}">
+            <p>Vitória do <span th:text="${simulacao.time2.nome}"></span> !</p>
+        </div>
+        <p class="display-4 alert alert-secondary" th:if="${simulacao.golsTime1 == simulacao.golsTime2}">Empate!</p>
+
+        <a class="btn btn-primary" th:href="@{/classificacao}">Classificação</a>
+        <a class="btn btn-success" th:href="@{/simular}">Realizar outra simulação</a>
+
+    </div>
+</body>
